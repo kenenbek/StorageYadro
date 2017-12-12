@@ -1,0 +1,3 @@
+/Windows/avastSS.scr 41664
+/Windows/bfsvc.exe 75264
+/Windows/bootstat.dat 67584
