@@ -1,3 +1,4 @@
+
 SSD_amount = 96
 HDD_JBOD_amount = 128
 

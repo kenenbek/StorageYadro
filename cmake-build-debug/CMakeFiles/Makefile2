@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug
 CMakeFiles/StorageYadro.dir/all:
 	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/depend
 	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target StorageYadro"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target StorageYadro"
 .PHONY : CMakeFiles/StorageYadro.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/StorageYadro.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/StorageYadro.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/StorageYadro.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/StorageYadro.dir/rule

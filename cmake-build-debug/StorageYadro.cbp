@@ -86,6 +86,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/PCIeFabric.cpp">
+			<Option target="StorageYadro"/>
+		</Unit>
+		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/adapter.cpp">
+			<Option target="StorageYadro"/>
+		</Unit>
 		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/cache.cpp">
 			<Option target="StorageYadro"/>
 		</Unit>
@@ -93,6 +99,9 @@
 			<Option target="StorageYadro"/>
 		</Unit>
 		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/dataset_generator.cpp">
+			<Option target="StorageYadro"/>
+		</Unit>
+		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/load_balancer.cpp">
 			<Option target="StorageYadro"/>
 		</Unit>
 		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/main.cpp">
@@ -114,6 +123,9 @@
 			<Option target="StorageYadro"/>
 		</Unit>
 		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/storage_system.h">
+			<Option target="StorageYadro"/>
+		</Unit>
+		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/structures.h">
 			<Option target="StorageYadro"/>
 		</Unit>
 		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/CMakeLists.txt">

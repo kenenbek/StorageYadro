@@ -4,8 +4,8 @@
  * under the terms of the license (GNU LGPL) which comes with this package. */
 
 #include <chrono>
-#include "simgrid/msg.h"
-#include "simgrid/plugins/file_system.h"
+#include <simgrid/msg.h>
+#include <simgrid/plugins/file_system.h>
 #include "my_functions.h"
 
 #define INMEGA (1024*1024)
@@ -20,16 +20,17 @@ int main(int argc, char **argv)
     MSG_storage_file_system_init();
     MSG_create_environment(argv[1]);
 
-    MSG_function_register("client", client);
-    MSG_function_register("server", server);
+    MSG_function_register("load_balancer", load_balancer);
+    MSG_function_register("server_manager", server_manager);
+    MSG_function_register("PCIeFabric_manager", PCIeFabric_manager);
+    MSG_function_register("Cache_manager", cache_manager);
+    MSG_function_register("adapter_manager", adapter_manager);
 
     MSG_launch_application(argv[2]);
 
     int res = MSG_main();
 
-    //XBT_INFO("Simulation time %g", MSG_get_clock());
-    std::chrono::steady_clock::time_point end= std::chrono::steady_clock::now();
+    XBT_INFO("Simulation time %g", MSG_get_clock());
 
-    XBT_INFO("Time difference = %d", std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count());
     return res != MSG_OK;
 }

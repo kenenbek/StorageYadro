@@ -6,9 +6,23 @@
 
 #IncludeRegexTransform: 
 
+/home/kenenbek/CLionProjects/StorageYadro/src/PCIeFabric.cpp
+simgrid/msg.h
+-
+my_functions.h
+/home/kenenbek/CLionProjects/StorageYadro/src/my_functions.h
+structures.h
+/home/kenenbek/CLionProjects/StorageYadro/src/structures.h
+
+/home/kenenbek/CLionProjects/StorageYadro/src/adapter.cpp
+
 /home/kenenbek/CLionProjects/StorageYadro/src/cache.cpp
 simgrid/msg.h
 -
+my_functions.h
+/home/kenenbek/CLionProjects/StorageYadro/src/my_functions.h
+structures.h
+/home/kenenbek/CLionProjects/StorageYadro/src/structures.h
 
 /home/kenenbek/CLionProjects/StorageYadro/src/client.cpp
 simgrid/msg.h
@@ -24,13 +38,21 @@ simgrid/msg.h
 string
 -
 
+/home/kenenbek/CLionProjects/StorageYadro/src/load_balancer.cpp
+simgrid/msg.h
+-
+my_functions.h
+/home/kenenbek/CLionProjects/StorageYadro/src/my_functions.h
+structures.h
+/home/kenenbek/CLionProjects/StorageYadro/src/structures.h
+
 /home/kenenbek/CLionProjects/StorageYadro/src/main.cpp
 chrono
 -
 simgrid/msg.h
-/home/kenenbek/CLionProjects/StorageYadro/src/simgrid/msg.h
+-
 simgrid/plugins/file_system.h
-/home/kenenbek/CLionProjects/StorageYadro/src/simgrid/plugins/file_system.h
+-
 my_functions.h
 /home/kenenbek/CLionProjects/StorageYadro/src/my_functions.h
 
@@ -47,6 +69,8 @@ storage.h
 /home/kenenbek/CLionProjects/StorageYadro/src/storage.h
 my_functions.h
 /home/kenenbek/CLionProjects/StorageYadro/src/my_functions.h
+structures.h
+/home/kenenbek/CLionProjects/StorageYadro/src/structures.h
 
 /home/kenenbek/CLionProjects/StorageYadro/src/storage.cpp
 storage.h
@@ -87,6 +111,8 @@ vector
 -
 storage.h
 /home/kenenbek/CLionProjects/StorageYadro/src/storage.h
+
+/home/kenenbek/CLionProjects/StorageYadro/src/structures.h
 
 /home/kenenbek/SimGrid/include/simgrid/datatypes.h
 simgrid/forward.h

@@ -2,808 +2,175 @@
 <!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
 <platform version="4.1">
 	<zone id="AS0" routing="Full">
-		<!--HDD storage type -->
-		<storage_type id="HDD" size="12TB">
-			<model_prop id="Bread" value="92MBps"/>
-			<model_prop id="Bwrite" value="62MBps"/>
-		</storage_type>
-
-		<!--SSD storage type-->
-		<storage_type id="SSD" size="8TB">
-			<model_prop id="Bread" value="920MBps"/>
-			<model_prop id="Bwrite" value="620MBps"/>
-		</storage_type>
 
 		<!--Cache storage type-->
 		<storage_type id="Cache" size="256GB">
-			<model_prop id="Bread" value="9200MBps"/>
-			<model_prop id="Bwrite" value="6200MBps"/>
+			<model_prop id="Bread" value="9GBps"/>
+			<model_prop id="Bwrite" value="6GBps"/>
 		</storage_type>
 
 		<!--MEGA storage types like storage pooling array-->
-		<storage_type id="megaSSD" size="50TB">
+		<storage_type id="SSD" size="50TB">
 			<model_prop id="Bread" value="10GBps"/>
 			<model_prop id="Bwrite" value="10GBps"/>
 		</storage_type>
 
-		<storage_type id="megaJBOD" size="1000TB">
+		<storage_type id="JBOD" size="1000TB">
 			<model_prop id="Bread" value="1GBps"/>
 			<model_prop id="Bwrite" value="1GBps"/>
 		</storage_type>
 
-		<!--CACHE array-->
-		<storage id="Cache_0" typeId="Cache" attach="Cache"/>
+		<!--Носители информации-->
+		<storage id="Cache" typeId="Cache" attach="FabricManager"/>
+		<storage id="SSD" typeId="SSD" attach="Adapter" content="content/SSD.txt"/>
+		<storage id="JBOD1" typeId="JBOD" attach="Adapter" content="content/JBOD1.txt"/>
+		<storage id="JBOD2" typeId="JBOD" attach="Adapter" content="content/JBOD2.txt"/>
 
-		<!--MEGA storage-->
-		<storage id="SSD_array" typeId="megaSSD" attach="SSD_host" content="content/SSD.txt"/>
-		<storage id="JBOD1" typeId="megaJBOD" attach="JBOD1_host" content="content/JBOD1.txt"/>
-		<storage id="JBOD2" typeId="megaJBOD" attach="JBOD2_host" content="content/JBOD2.txt"/>
 
-		<!--SSD array-->
-		<storage id="SSD_0" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_1" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_2" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_3" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_4" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_5" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_6" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_7" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_8" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_9" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_10" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_11" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_12" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_13" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_14" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_15" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_16" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_17" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_18" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_19" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_20" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_21" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_22" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_23" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_24" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_25" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_26" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_27" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_28" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_29" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_30" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_31" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_32" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_33" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_34" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_35" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_36" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_37" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_38" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_39" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_40" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_41" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_42" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_43" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_44" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_45" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_46" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_47" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_48" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_49" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_50" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_51" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_52" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_53" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_54" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_55" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_56" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_57" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_58" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_59" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_60" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_61" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_62" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_63" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_64" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_65" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_66" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_67" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_68" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_69" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_70" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_71" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_72" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_73" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_74" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_75" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_76" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_77" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_78" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_79" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_80" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_81" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_82" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_83" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_84" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_85" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_86" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_87" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_88" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_89" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_90" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_91" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_92" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_93" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_94" typeId="SSD" attach="SSD_host"/>
-		<storage id="SSD_95" typeId="SSD" attach="SSD_host"/>
-
-		<!--HDD JBOD1 array-->
-		<storage id="JBOD1HDD_0" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_1" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_2" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_3" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_4" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_5" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_6" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_7" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_8" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_9" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_10" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_11" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_12" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_13" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_14" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_15" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_16" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_17" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_18" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_19" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_20" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_21" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_22" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_23" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_24" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_25" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_26" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_27" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_28" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_29" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_30" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_31" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_32" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_33" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_34" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_35" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_36" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_37" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_38" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_39" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_40" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_41" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_42" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_43" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_44" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_45" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_46" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_47" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_48" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_49" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_50" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_51" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_52" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_53" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_54" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_55" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_56" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_57" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_58" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_59" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_60" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_61" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_62" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_63" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_64" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_65" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_66" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_67" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_68" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_69" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_70" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_71" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_72" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_73" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_74" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_75" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_76" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_77" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_78" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_79" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_80" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_81" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_82" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_83" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_84" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_85" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_86" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_87" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_88" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_89" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_90" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_91" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_92" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_93" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_94" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_95" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_96" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_97" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_98" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_99" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_100" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_101" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_102" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_103" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_104" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_105" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_106" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_107" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_108" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_109" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_110" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_111" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_112" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_113" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_114" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_115" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_116" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_117" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_118" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_119" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_120" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_121" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_122" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_123" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_124" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_125" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_126" typeId="HDD" attach="JBOD1_host"/>
-		<storage id="JBOD1HDD_127" typeId="HDD" attach="JBOD1_host"/>
-
-		<!--HDD JBOD2 array-->
-		<storage id="JBOD2HDD_0" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_1" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_2" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_3" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_4" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_5" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_6" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_7" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_8" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_9" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_10" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_11" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_12" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_13" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_14" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_15" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_16" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_17" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_18" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_19" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_20" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_21" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_22" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_23" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_24" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_25" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_26" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_27" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_28" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_29" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_30" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_31" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_32" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_33" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_34" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_35" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_36" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_37" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_38" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_39" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_40" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_41" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_42" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_43" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_44" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_45" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_46" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_47" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_48" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_49" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_50" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_51" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_52" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_53" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_54" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_55" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_56" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_57" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_58" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_59" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_60" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_61" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_62" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_63" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_64" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_65" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_66" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_67" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_68" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_69" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_70" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_71" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_72" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_73" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_74" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_75" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_76" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_77" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_78" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_79" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_80" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_81" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_82" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_83" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_84" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_85" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_86" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_87" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_88" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_89" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_90" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_91" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_92" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_93" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_94" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_95" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_96" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_97" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_98" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_99" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_100" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_101" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_102" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_103" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_104" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_105" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_106" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_107" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_108" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_109" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_110" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_111" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_112" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_113" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_114" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_115" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_116" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_117" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_118" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_119" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_120" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_121" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_122" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_123" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_124" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_125" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_126" typeId="HDD" attach="JBOD2_host"/>
-		<storage id="JBOD2HDD_127" typeId="HDD" attach="JBOD2_host"/>
-
-		<!--Servers array-->
-		<host id="Client" speed="1Gf">
+		<host id="LoadBalancer" speed="1Gf">
 		</host>
-		<host id="Server1" speed="1Gf">
-			<!--MEGA STORAGES-->
-			<mount storageId="SSD_array" name="/SSD"/>
+
+		<host id="Server1" speed="1Gf"/>
+		<host id="Server2" speed="1Gf"/>
+		<host id="Server3" speed="1Gf"/>
+		<host id="Server4" speed="1Gf"/>
+
+		<host id="PCIeCard1" speed="1Gf"/>
+		<host id="PCIeCard2" speed="1Gf"/>
+		<host id="PCIeCard3" speed="1Gf"/>
+		<host id="PCIeCard4" speed="1Gf">
+		</host>
+
+		<host id="FabricManager" speed="1Gf">
+			<mount storageId="Cache" name="/Cache"/>
+		</host>
+
+		<host id="Adapter" speed="1Gf">
+			<mount storageId="SSD" name="/SSD"/>
 			<mount storageId="JBOD1" name="/JBOD1"/>
 			<mount storageId="JBOD2" name="/JBOD2"/>
-
-			<mount storageId="SSD_0" name="/SSD0"/>
-			<mount storageId="SSD_1" name="/SSD1"/>
-			<mount storageId="SSD_2" name="/SSD2"/>
-			<mount storageId="SSD_3" name="/SSD3"/>
-			<mount storageId="SSD_4" name="/SSD4"/>
-			<mount storageId="SSD_5" name="/SSD5"/>
-			<mount storageId="SSD_6" name="/SSD6"/>
-			<mount storageId="SSD_7" name="/SSD7"/>
-			<mount storageId="SSD_8" name="/SSD8"/>
-			<mount storageId="SSD_9" name="/SSD9"/>
-			<mount storageId="SSD_10" name="/SSD10"/>
-			<mount storageId="SSD_11" name="/SSD11"/>
-			<mount storageId="SSD_12" name="/SSD12"/>
-			<mount storageId="SSD_13" name="/SSD13"/>
-			<mount storageId="SSD_14" name="/SSD14"/>
-			<mount storageId="SSD_15" name="/SSD15"/>
-			<mount storageId="SSD_16" name="/SSD16"/>
-			<mount storageId="SSD_17" name="/SSD17"/>
-			<mount storageId="SSD_18" name="/SSD18"/>
-			<mount storageId="SSD_19" name="/SSD19"/>
-			<mount storageId="SSD_20" name="/SSD20"/>
-			<mount storageId="SSD_21" name="/SSD21"/>
-			<mount storageId="SSD_22" name="/SSD22"/>
-			<mount storageId="SSD_23" name="/SSD23"/>
-			<mount storageId="SSD_24" name="/SSD24"/>
-			<mount storageId="SSD_25" name="/SSD25"/>
-			<mount storageId="SSD_26" name="/SSD26"/>
-			<mount storageId="SSD_27" name="/SSD27"/>
-			<mount storageId="SSD_28" name="/SSD28"/>
-			<mount storageId="SSD_29" name="/SSD29"/>
-			<mount storageId="SSD_30" name="/SSD30"/>
-			<mount storageId="SSD_31" name="/SSD31"/>
-			<mount storageId="SSD_32" name="/SSD32"/>
-			<mount storageId="SSD_33" name="/SSD33"/>
-			<mount storageId="SSD_34" name="/SSD34"/>
-			<mount storageId="SSD_35" name="/SSD35"/>
-			<mount storageId="SSD_36" name="/SSD36"/>
-			<mount storageId="SSD_37" name="/SSD37"/>
-			<mount storageId="SSD_38" name="/SSD38"/>
-			<mount storageId="SSD_39" name="/SSD39"/>
-			<mount storageId="SSD_40" name="/SSD40"/>
-			<mount storageId="SSD_41" name="/SSD41"/>
-			<mount storageId="SSD_42" name="/SSD42"/>
-			<mount storageId="SSD_43" name="/SSD43"/>
-			<mount storageId="SSD_44" name="/SSD44"/>
-			<mount storageId="SSD_45" name="/SSD45"/>
-			<mount storageId="SSD_46" name="/SSD46"/>
-			<mount storageId="SSD_47" name="/SSD47"/>
-			<mount storageId="SSD_48" name="/SSD48"/>
-			<mount storageId="SSD_49" name="/SSD49"/>
-			<mount storageId="SSD_50" name="/SSD50"/>
-			<mount storageId="SSD_51" name="/SSD51"/>
-			<mount storageId="SSD_52" name="/SSD52"/>
-			<mount storageId="SSD_53" name="/SSD53"/>
-			<mount storageId="SSD_54" name="/SSD54"/>
-			<mount storageId="SSD_55" name="/SSD55"/>
-			<mount storageId="SSD_56" name="/SSD56"/>
-			<mount storageId="SSD_57" name="/SSD57"/>
-			<mount storageId="SSD_58" name="/SSD58"/>
-			<mount storageId="SSD_59" name="/SSD59"/>
-			<mount storageId="SSD_60" name="/SSD60"/>
-			<mount storageId="SSD_61" name="/SSD61"/>
-			<mount storageId="SSD_62" name="/SSD62"/>
-			<mount storageId="SSD_63" name="/SSD63"/>
-			<mount storageId="SSD_64" name="/SSD64"/>
-			<mount storageId="SSD_65" name="/SSD65"/>
-			<mount storageId="SSD_66" name="/SSD66"/>
-			<mount storageId="SSD_67" name="/SSD67"/>
-			<mount storageId="SSD_68" name="/SSD68"/>
-			<mount storageId="SSD_69" name="/SSD69"/>
-			<mount storageId="SSD_70" name="/SSD70"/>
-			<mount storageId="SSD_71" name="/SSD71"/>
-			<mount storageId="SSD_72" name="/SSD72"/>
-			<mount storageId="SSD_73" name="/SSD73"/>
-			<mount storageId="SSD_74" name="/SSD74"/>
-			<mount storageId="SSD_75" name="/SSD75"/>
-			<mount storageId="SSD_76" name="/SSD76"/>
-			<mount storageId="SSD_77" name="/SSD77"/>
-			<mount storageId="SSD_78" name="/SSD78"/>
-			<mount storageId="SSD_79" name="/SSD79"/>
-			<mount storageId="SSD_80" name="/SSD80"/>
-			<mount storageId="SSD_81" name="/SSD81"/>
-			<mount storageId="SSD_82" name="/SSD82"/>
-			<mount storageId="SSD_83" name="/SSD83"/>
-			<mount storageId="SSD_84" name="/SSD84"/>
-			<mount storageId="SSD_85" name="/SSD85"/>
-			<mount storageId="SSD_86" name="/SSD86"/>
-			<mount storageId="SSD_87" name="/SSD87"/>
-			<mount storageId="SSD_88" name="/SSD88"/>
-			<mount storageId="SSD_89" name="/SSD89"/>
-			<mount storageId="SSD_90" name="/SSD90"/>
-			<mount storageId="SSD_91" name="/SSD91"/>
-			<mount storageId="SSD_92" name="/SSD92"/>
-			<mount storageId="SSD_93" name="/SSD93"/>
-			<mount storageId="SSD_94" name="/SSD94"/>
-			<mount storageId="SSD_95" name="/SSD95"/>
-
-			<mount storageId="JBOD1HDD_0" name="/JBOD1HDD_0"/>
-			<mount storageId="JBOD1HDD_1" name="/JBOD1HDD_1"/>
-			<mount storageId="JBOD1HDD_2" name="/JBOD1HDD_2"/>
-			<mount storageId="JBOD1HDD_3" name="/JBOD1HDD_3"/>
-			<mount storageId="JBOD1HDD_4" name="/JBOD1HDD_4"/>
-			<mount storageId="JBOD1HDD_5" name="/JBOD1HDD_5"/>
-			<mount storageId="JBOD1HDD_6" name="/JBOD1HDD_6"/>
-			<mount storageId="JBOD1HDD_7" name="/JBOD1HDD_7"/>
-			<mount storageId="JBOD1HDD_8" name="/JBOD1HDD_8"/>
-			<mount storageId="JBOD1HDD_9" name="/JBOD1HDD_9"/>
-			<mount storageId="JBOD1HDD_10" name="/JBOD1HDD_10"/>
-			<mount storageId="JBOD1HDD_11" name="/JBOD1HDD_11"/>
-			<mount storageId="JBOD1HDD_12" name="/JBOD1HDD_12"/>
-			<mount storageId="JBOD1HDD_13" name="/JBOD1HDD_13"/>
-			<mount storageId="JBOD1HDD_14" name="/JBOD1HDD_14"/>
-			<mount storageId="JBOD1HDD_15" name="/JBOD1HDD_15"/>
-			<mount storageId="JBOD1HDD_16" name="/JBOD1HDD_16"/>
-			<mount storageId="JBOD1HDD_17" name="/JBOD1HDD_17"/>
-			<mount storageId="JBOD1HDD_18" name="/JBOD1HDD_18"/>
-			<mount storageId="JBOD1HDD_19" name="/JBOD1HDD_19"/>
-			<mount storageId="JBOD1HDD_20" name="/JBOD1HDD_20"/>
-			<mount storageId="JBOD1HDD_21" name="/JBOD1HDD_21"/>
-			<mount storageId="JBOD1HDD_22" name="/JBOD1HDD_22"/>
-			<mount storageId="JBOD1HDD_23" name="/JBOD1HDD_23"/>
-			<mount storageId="JBOD1HDD_24" name="/JBOD1HDD_24"/>
-			<mount storageId="JBOD1HDD_25" name="/JBOD1HDD_25"/>
-			<mount storageId="JBOD1HDD_26" name="/JBOD1HDD_26"/>
-			<mount storageId="JBOD1HDD_27" name="/JBOD1HDD_27"/>
-			<mount storageId="JBOD1HDD_28" name="/JBOD1HDD_28"/>
-			<mount storageId="JBOD1HDD_29" name="/JBOD1HDD_29"/>
-			<mount storageId="JBOD1HDD_30" name="/JBOD1HDD_30"/>
-			<mount storageId="JBOD1HDD_31" name="/JBOD1HDD_31"/>
-			<mount storageId="JBOD1HDD_32" name="/JBOD1HDD_32"/>
-			<mount storageId="JBOD1HDD_33" name="/JBOD1HDD_33"/>
-			<mount storageId="JBOD1HDD_34" name="/JBOD1HDD_34"/>
-			<mount storageId="JBOD1HDD_35" name="/JBOD1HDD_35"/>
-			<mount storageId="JBOD1HDD_36" name="/JBOD1HDD_36"/>
-			<mount storageId="JBOD1HDD_37" name="/JBOD1HDD_37"/>
-			<mount storageId="JBOD1HDD_38" name="/JBOD1HDD_38"/>
-			<mount storageId="JBOD1HDD_39" name="/JBOD1HDD_39"/>
-			<mount storageId="JBOD1HDD_40" name="/JBOD1HDD_40"/>
-			<mount storageId="JBOD1HDD_41" name="/JBOD1HDD_41"/>
-			<mount storageId="JBOD1HDD_42" name="/JBOD1HDD_42"/>
-			<mount storageId="JBOD1HDD_43" name="/JBOD1HDD_43"/>
-			<mount storageId="JBOD1HDD_44" name="/JBOD1HDD_44"/>
-			<mount storageId="JBOD1HDD_45" name="/JBOD1HDD_45"/>
-			<mount storageId="JBOD1HDD_46" name="/JBOD1HDD_46"/>
-			<mount storageId="JBOD1HDD_47" name="/JBOD1HDD_47"/>
-			<mount storageId="JBOD1HDD_48" name="/JBOD1HDD_48"/>
-			<mount storageId="JBOD1HDD_49" name="/JBOD1HDD_49"/>
-			<mount storageId="JBOD1HDD_50" name="/JBOD1HDD_50"/>
-			<mount storageId="JBOD1HDD_51" name="/JBOD1HDD_51"/>
-			<mount storageId="JBOD1HDD_52" name="/JBOD1HDD_52"/>
-			<mount storageId="JBOD1HDD_53" name="/JBOD1HDD_53"/>
-			<mount storageId="JBOD1HDD_54" name="/JBOD1HDD_54"/>
-			<mount storageId="JBOD1HDD_55" name="/JBOD1HDD_55"/>
-			<mount storageId="JBOD1HDD_56" name="/JBOD1HDD_56"/>
-			<mount storageId="JBOD1HDD_57" name="/JBOD1HDD_57"/>
-			<mount storageId="JBOD1HDD_58" name="/JBOD1HDD_58"/>
-			<mount storageId="JBOD1HDD_59" name="/JBOD1HDD_59"/>
-			<mount storageId="JBOD1HDD_60" name="/JBOD1HDD_60"/>
-			<mount storageId="JBOD1HDD_61" name="/JBOD1HDD_61"/>
-			<mount storageId="JBOD1HDD_62" name="/JBOD1HDD_62"/>
-			<mount storageId="JBOD1HDD_63" name="/JBOD1HDD_63"/>
-			<mount storageId="JBOD1HDD_64" name="/JBOD1HDD_64"/>
-			<mount storageId="JBOD1HDD_65" name="/JBOD1HDD_65"/>
-			<mount storageId="JBOD1HDD_66" name="/JBOD1HDD_66"/>
-			<mount storageId="JBOD1HDD_67" name="/JBOD1HDD_67"/>
-			<mount storageId="JBOD1HDD_68" name="/JBOD1HDD_68"/>
-			<mount storageId="JBOD1HDD_69" name="/JBOD1HDD_69"/>
-			<mount storageId="JBOD1HDD_70" name="/JBOD1HDD_70"/>
-			<mount storageId="JBOD1HDD_71" name="/JBOD1HDD_71"/>
-			<mount storageId="JBOD1HDD_72" name="/JBOD1HDD_72"/>
-			<mount storageId="JBOD1HDD_73" name="/JBOD1HDD_73"/>
-			<mount storageId="JBOD1HDD_74" name="/JBOD1HDD_74"/>
-			<mount storageId="JBOD1HDD_75" name="/JBOD1HDD_75"/>
-			<mount storageId="JBOD1HDD_76" name="/JBOD1HDD_76"/>
-			<mount storageId="JBOD1HDD_77" name="/JBOD1HDD_77"/>
-			<mount storageId="JBOD1HDD_78" name="/JBOD1HDD_78"/>
-			<mount storageId="JBOD1HDD_79" name="/JBOD1HDD_79"/>
-			<mount storageId="JBOD1HDD_80" name="/JBOD1HDD_80"/>
-			<mount storageId="JBOD1HDD_81" name="/JBOD1HDD_81"/>
-			<mount storageId="JBOD1HDD_82" name="/JBOD1HDD_82"/>
-			<mount storageId="JBOD1HDD_83" name="/JBOD1HDD_83"/>
-			<mount storageId="JBOD1HDD_84" name="/JBOD1HDD_84"/>
-			<mount storageId="JBOD1HDD_85" name="/JBOD1HDD_85"/>
-			<mount storageId="JBOD1HDD_86" name="/JBOD1HDD_86"/>
-			<mount storageId="JBOD1HDD_87" name="/JBOD1HDD_87"/>
-			<mount storageId="JBOD1HDD_88" name="/JBOD1HDD_88"/>
-			<mount storageId="JBOD1HDD_89" name="/JBOD1HDD_89"/>
-			<mount storageId="JBOD1HDD_90" name="/JBOD1HDD_90"/>
-			<mount storageId="JBOD1HDD_91" name="/JBOD1HDD_91"/>
-			<mount storageId="JBOD1HDD_92" name="/JBOD1HDD_92"/>
-			<mount storageId="JBOD1HDD_93" name="/JBOD1HDD_93"/>
-			<mount storageId="JBOD1HDD_94" name="/JBOD1HDD_94"/>
-			<mount storageId="JBOD1HDD_95" name="/JBOD1HDD_95"/>
-			<mount storageId="JBOD1HDD_96" name="/JBOD1HDD_96"/>
-			<mount storageId="JBOD1HDD_97" name="/JBOD1HDD_97"/>
-			<mount storageId="JBOD1HDD_98" name="/JBOD1HDD_98"/>
-			<mount storageId="JBOD1HDD_99" name="/JBOD1HDD_99"/>
-			<mount storageId="JBOD1HDD_100" name="/JBOD1HDD_100"/>
-			<mount storageId="JBOD1HDD_101" name="/JBOD1HDD_101"/>
-			<mount storageId="JBOD1HDD_102" name="/JBOD1HDD_102"/>
-			<mount storageId="JBOD1HDD_103" name="/JBOD1HDD_103"/>
-			<mount storageId="JBOD1HDD_104" name="/JBOD1HDD_104"/>
-			<mount storageId="JBOD1HDD_105" name="/JBOD1HDD_105"/>
-			<mount storageId="JBOD1HDD_106" name="/JBOD1HDD_106"/>
-			<mount storageId="JBOD1HDD_107" name="/JBOD1HDD_107"/>
-			<mount storageId="JBOD1HDD_108" name="/JBOD1HDD_108"/>
-			<mount storageId="JBOD1HDD_109" name="/JBOD1HDD_109"/>
-			<mount storageId="JBOD1HDD_110" name="/JBOD1HDD_110"/>
-			<mount storageId="JBOD1HDD_111" name="/JBOD1HDD_111"/>
-			<mount storageId="JBOD1HDD_112" name="/JBOD1HDD_112"/>
-			<mount storageId="JBOD1HDD_113" name="/JBOD1HDD_113"/>
-			<mount storageId="JBOD1HDD_114" name="/JBOD1HDD_114"/>
-			<mount storageId="JBOD1HDD_115" name="/JBOD1HDD_115"/>
-			<mount storageId="JBOD1HDD_116" name="/JBOD1HDD_116"/>
-			<mount storageId="JBOD1HDD_117" name="/JBOD1HDD_117"/>
-			<mount storageId="JBOD1HDD_118" name="/JBOD1HDD_118"/>
-			<mount storageId="JBOD1HDD_119" name="/JBOD1HDD_119"/>
-			<mount storageId="JBOD1HDD_120" name="/JBOD1HDD_120"/>
-			<mount storageId="JBOD1HDD_121" name="/JBOD1HDD_121"/>
-			<mount storageId="JBOD1HDD_122" name="/JBOD1HDD_122"/>
-			<mount storageId="JBOD1HDD_123" name="/JBOD1HDD_123"/>
-			<mount storageId="JBOD1HDD_124" name="/JBOD1HDD_124"/>
-			<mount storageId="JBOD1HDD_125" name="/JBOD1HDD_125"/>
-			<mount storageId="JBOD1HDD_126" name="/JBOD1HDD_126"/>
-			<mount storageId="JBOD1HDD_127" name="/JBOD1HDD_127"/>
-
-			<mount storageId="JBOD2HDD_0" name="/JBOD2HDD_0"/>
-			<mount storageId="JBOD2HDD_1" name="/JBOD2HDD_1"/>
-			<mount storageId="JBOD2HDD_2" name="/JBOD2HDD_2"/>
-			<mount storageId="JBOD2HDD_3" name="/JBOD2HDD_3"/>
-			<mount storageId="JBOD2HDD_4" name="/JBOD2HDD_4"/>
-			<mount storageId="JBOD2HDD_5" name="/JBOD2HDD_5"/>
-			<mount storageId="JBOD2HDD_6" name="/JBOD2HDD_6"/>
-			<mount storageId="JBOD2HDD_7" name="/JBOD2HDD_7"/>
-			<mount storageId="JBOD2HDD_8" name="/JBOD2HDD_8"/>
-			<mount storageId="JBOD2HDD_9" name="/JBOD2HDD_9"/>
-			<mount storageId="JBOD2HDD_10" name="/JBOD2HDD_10"/>
-			<mount storageId="JBOD2HDD_11" name="/JBOD2HDD_11"/>
-			<mount storageId="JBOD2HDD_12" name="/JBOD2HDD_12"/>
-			<mount storageId="JBOD2HDD_13" name="/JBOD2HDD_13"/>
-			<mount storageId="JBOD2HDD_14" name="/JBOD2HDD_14"/>
-			<mount storageId="JBOD2HDD_15" name="/JBOD2HDD_15"/>
-			<mount storageId="JBOD2HDD_16" name="/JBOD2HDD_16"/>
-			<mount storageId="JBOD2HDD_17" name="/JBOD2HDD_17"/>
-			<mount storageId="JBOD2HDD_18" name="/JBOD2HDD_18"/>
-			<mount storageId="JBOD2HDD_19" name="/JBOD2HDD_19"/>
-			<mount storageId="JBOD2HDD_20" name="/JBOD2HDD_20"/>
-			<mount storageId="JBOD2HDD_21" name="/JBOD2HDD_21"/>
-			<mount storageId="JBOD2HDD_22" name="/JBOD2HDD_22"/>
-			<mount storageId="JBOD2HDD_23" name="/JBOD2HDD_23"/>
-			<mount storageId="JBOD2HDD_24" name="/JBOD2HDD_24"/>
-			<mount storageId="JBOD2HDD_25" name="/JBOD2HDD_25"/>
-			<mount storageId="JBOD2HDD_26" name="/JBOD2HDD_26"/>
-			<mount storageId="JBOD2HDD_27" name="/JBOD2HDD_27"/>
-			<mount storageId="JBOD2HDD_28" name="/JBOD2HDD_28"/>
-			<mount storageId="JBOD2HDD_29" name="/JBOD2HDD_29"/>
-			<mount storageId="JBOD2HDD_30" name="/JBOD2HDD_30"/>
-			<mount storageId="JBOD2HDD_31" name="/JBOD2HDD_31"/>
-			<mount storageId="JBOD2HDD_32" name="/JBOD2HDD_32"/>
-			<mount storageId="JBOD2HDD_33" name="/JBOD2HDD_33"/>
-			<mount storageId="JBOD2HDD_34" name="/JBOD2HDD_34"/>
-			<mount storageId="JBOD2HDD_35" name="/JBOD2HDD_35"/>
-			<mount storageId="JBOD2HDD_36" name="/JBOD2HDD_36"/>
-			<mount storageId="JBOD2HDD_37" name="/JBOD2HDD_37"/>
-			<mount storageId="JBOD2HDD_38" name="/JBOD2HDD_38"/>
-			<mount storageId="JBOD2HDD_39" name="/JBOD2HDD_39"/>
-			<mount storageId="JBOD2HDD_40" name="/JBOD2HDD_40"/>
-			<mount storageId="JBOD2HDD_41" name="/JBOD2HDD_41"/>
-			<mount storageId="JBOD2HDD_42" name="/JBOD2HDD_42"/>
-			<mount storageId="JBOD2HDD_43" name="/JBOD2HDD_43"/>
-			<mount storageId="JBOD2HDD_44" name="/JBOD2HDD_44"/>
-			<mount storageId="JBOD2HDD_45" name="/JBOD2HDD_45"/>
-			<mount storageId="JBOD2HDD_46" name="/JBOD2HDD_46"/>
-			<mount storageId="JBOD2HDD_47" name="/JBOD2HDD_47"/>
-			<mount storageId="JBOD2HDD_48" name="/JBOD2HDD_48"/>
-			<mount storageId="JBOD2HDD_49" name="/JBOD2HDD_49"/>
-			<mount storageId="JBOD2HDD_50" name="/JBOD2HDD_50"/>
-			<mount storageId="JBOD2HDD_51" name="/JBOD2HDD_51"/>
-			<mount storageId="JBOD2HDD_52" name="/JBOD2HDD_52"/>
-			<mount storageId="JBOD2HDD_53" name="/JBOD2HDD_53"/>
-			<mount storageId="JBOD2HDD_54" name="/JBOD2HDD_54"/>
-			<mount storageId="JBOD2HDD_55" name="/JBOD2HDD_55"/>
-			<mount storageId="JBOD2HDD_56" name="/JBOD2HDD_56"/>
-			<mount storageId="JBOD2HDD_57" name="/JBOD2HDD_57"/>
-			<mount storageId="JBOD2HDD_58" name="/JBOD2HDD_58"/>
-			<mount storageId="JBOD2HDD_59" name="/JBOD2HDD_59"/>
-			<mount storageId="JBOD2HDD_60" name="/JBOD2HDD_60"/>
-			<mount storageId="JBOD2HDD_61" name="/JBOD2HDD_61"/>
-			<mount storageId="JBOD2HDD_62" name="/JBOD2HDD_62"/>
-			<mount storageId="JBOD2HDD_63" name="/JBOD2HDD_63"/>
-			<mount storageId="JBOD2HDD_64" name="/JBOD2HDD_64"/>
-			<mount storageId="JBOD2HDD_65" name="/JBOD2HDD_65"/>
-			<mount storageId="JBOD2HDD_66" name="/JBOD2HDD_66"/>
-			<mount storageId="JBOD2HDD_67" name="/JBOD2HDD_67"/>
-			<mount storageId="JBOD2HDD_68" name="/JBOD2HDD_68"/>
-			<mount storageId="JBOD2HDD_69" name="/JBOD2HDD_69"/>
-			<mount storageId="JBOD2HDD_70" name="/JBOD2HDD_70"/>
-			<mount storageId="JBOD2HDD_71" name="/JBOD2HDD_71"/>
-			<mount storageId="JBOD2HDD_72" name="/JBOD2HDD_72"/>
-			<mount storageId="JBOD2HDD_73" name="/JBOD2HDD_73"/>
-			<mount storageId="JBOD2HDD_74" name="/JBOD2HDD_74"/>
-			<mount storageId="JBOD2HDD_75" name="/JBOD2HDD_75"/>
-			<mount storageId="JBOD2HDD_76" name="/JBOD2HDD_76"/>
-			<mount storageId="JBOD2HDD_77" name="/JBOD2HDD_77"/>
-			<mount storageId="JBOD2HDD_78" name="/JBOD2HDD_78"/>
-			<mount storageId="JBOD2HDD_79" name="/JBOD2HDD_79"/>
-			<mount storageId="JBOD2HDD_80" name="/JBOD2HDD_80"/>
-			<mount storageId="JBOD2HDD_81" name="/JBOD2HDD_81"/>
-			<mount storageId="JBOD2HDD_82" name="/JBOD2HDD_82"/>
-			<mount storageId="JBOD2HDD_83" name="/JBOD2HDD_83"/>
-			<mount storageId="JBOD2HDD_84" name="/JBOD2HDD_84"/>
-			<mount storageId="JBOD2HDD_85" name="/JBOD2HDD_85"/>
-			<mount storageId="JBOD2HDD_86" name="/JBOD2HDD_86"/>
-			<mount storageId="JBOD2HDD_87" name="/JBOD2HDD_87"/>
-			<mount storageId="JBOD2HDD_88" name="/JBOD2HDD_88"/>
-			<mount storageId="JBOD2HDD_89" name="/JBOD2HDD_89"/>
-			<mount storageId="JBOD2HDD_90" name="/JBOD2HDD_90"/>
-			<mount storageId="JBOD2HDD_91" name="/JBOD2HDD_91"/>
-			<mount storageId="JBOD2HDD_92" name="/JBOD2HDD_92"/>
-			<mount storageId="JBOD2HDD_93" name="/JBOD2HDD_93"/>
-			<mount storageId="JBOD2HDD_94" name="/JBOD2HDD_94"/>
-			<mount storageId="JBOD2HDD_95" name="/JBOD2HDD_95"/>
-			<mount storageId="JBOD2HDD_96" name="/JBOD2HDD_96"/>
-			<mount storageId="JBOD2HDD_97" name="/JBOD2HDD_97"/>
-			<mount storageId="JBOD2HDD_98" name="/JBOD2HDD_98"/>
-			<mount storageId="JBOD2HDD_99" name="/JBOD2HDD_99"/>
-			<mount storageId="JBOD2HDD_100" name="/JBOD2HDD_100"/>
-			<mount storageId="JBOD2HDD_101" name="/JBOD2HDD_101"/>
-			<mount storageId="JBOD2HDD_102" name="/JBOD2HDD_102"/>
-			<mount storageId="JBOD2HDD_103" name="/JBOD2HDD_103"/>
-			<mount storageId="JBOD2HDD_104" name="/JBOD2HDD_104"/>
-			<mount storageId="JBOD2HDD_105" name="/JBOD2HDD_105"/>
-			<mount storageId="JBOD2HDD_106" name="/JBOD2HDD_106"/>
-			<mount storageId="JBOD2HDD_107" name="/JBOD2HDD_107"/>
-			<mount storageId="JBOD2HDD_108" name="/JBOD2HDD_108"/>
-			<mount storageId="JBOD2HDD_109" name="/JBOD2HDD_109"/>
-			<mount storageId="JBOD2HDD_110" name="/JBOD2HDD_110"/>
-			<mount storageId="JBOD2HDD_111" name="/JBOD2HDD_111"/>
-			<mount storageId="JBOD2HDD_112" name="/JBOD2HDD_112"/>
-			<mount storageId="JBOD2HDD_113" name="/JBOD2HDD_113"/>
-			<mount storageId="JBOD2HDD_114" name="/JBOD2HDD_114"/>
-			<mount storageId="JBOD2HDD_115" name="/JBOD2HDD_115"/>
-			<mount storageId="JBOD2HDD_116" name="/JBOD2HDD_116"/>
-			<mount storageId="JBOD2HDD_117" name="/JBOD2HDD_117"/>
-			<mount storageId="JBOD2HDD_118" name="/JBOD2HDD_118"/>
-			<mount storageId="JBOD2HDD_119" name="/JBOD2HDD_119"/>
-			<mount storageId="JBOD2HDD_120" name="/JBOD2HDD_120"/>
-			<mount storageId="JBOD2HDD_121" name="/JBOD2HDD_121"/>
-			<mount storageId="JBOD2HDD_122" name="/JBOD2HDD_122"/>
-			<mount storageId="JBOD2HDD_123" name="/JBOD2HDD_123"/>
-			<mount storageId="JBOD2HDD_124" name="/JBOD2HDD_124"/>
-			<mount storageId="JBOD2HDD_125" name="/JBOD2HDD_125"/>
-			<mount storageId="JBOD2HDD_126" name="/JBOD2HDD_126"/>
-			<mount storageId="JBOD2HDD_127" name="/JBOD2HDD_127"/>
-
 		</host>
 
-		<!--Cache server array-->
-		<host id="Cache" speed="1Gf">
-			<mount storageId="Cache_0" name="/Cache"/>
-		</host>
-
-		<!--SSD server array-->
-		<host id="SSD_host" speed="1Gf">
-		</host>
-
-		<!--JBOD1 server array-->
-		<host id="JBOD1_host" speed="1Gf">
-
-		</host>
-
-		<!--JBOD2 server array-->
-		<host id="JBOD2_host" speed="1Gf">
-
-		</host>
+		<host id="Cache_host" speed="1Gf"/>
 
 		<!--LINKS-->
-		<link id="User_Server1" bandwidth="10GBps" latency="50us"/>
-		<link id="Server1_Cache" bandwidth="64GBps" latency="50us"/>
-		<link id="Cache_SSD" bandwidth="64GBps" latency="50us"/>
-		<link id="Cache_JBOD1" bandwidth="64GBps" latency="50us"/>
-		<link id="Cache_JBOD2" bandwidth="64GBps" latency="50us"/>
+		<link id="LB_Server1" bandwidth="10GBps" latency="0us"/>
+		<link id="LB_Server2" bandwidth="10GBps" latency="0us"/>
+		<link id="LB_Server3" bandwidth="10GBps" latency="0us"/>
+		<link id="LB_Server4" bandwidth="10GBps" latency="0us"/>
 
-		<!--ROUTES-->
-		<route src="Client" dst="Server1">
-			<link_ctn id="User_Server1"/>
+		<link id="Server1_PCIeCard1" bandwidth="10GBps" latency="0us"/>
+		<link id="Server2_PCIeCard2" bandwidth="10GBps" latency="0us"/>
+		<link id="Server3_PCIeCard3" bandwidth="10GBps" latency="0us"/>
+		<link id="Server4_PCIeCard4" bandwidth="10GBps" latency="0us"/>
+
+		<link id="PCIeCard1_FabricManager" bandwidth="64GBps" latency="0us"/>
+		<link id="PCIeCard2_FabricManager" bandwidth="64GBps" latency="0us"/>
+		<link id="PCIeCard3_FabricManager" bandwidth="64GBps" latency="0us"/>
+		<link id="PCIeCard4_FabricManager" bandwidth="64GBps" latency="0us"/>
+
+		<link id="FabricManager_Adapter" bandwidth="64GBps" latency="0us"/>
+
+		<link id="FabricManager_Cache_host" bandwidth="64GBps" latency="0us"/>
+		<link id="LB_FM" bandwidth="64GBps"  latency="0us"/>
+		<link id="LB_CM" bandwidth="64GBps" latency="0us"/>
+
+		<!--ROUTES FROM LOAD BALANCER TO EACH SERVER-->
+		<route src="LoadBalancer" dst="Server1">
+			<link_ctn id="LB_Server1"/>
 		</route>
-		<route src="Server1" dst="Cache">
-			<link_ctn id="Server1_Cache"/>
+		<route src="LoadBalancer" dst="Server2">
+			<link_ctn id="LB_Server2"/>
 		</route>
-		<route src="Cache" dst="SSD_host">
-			<link_ctn id="Cache_SSD"/>
+		<route src="LoadBalancer" dst="Server3">
+			<link_ctn id="LB_Server3"/>
 		</route>
-		<route src="Cache" dst="JBOD1_host">
-			<link_ctn id="Cache_JBOD1"/>
+		<route src="LoadBalancer" dst="Server4">
+			<link_ctn id="LB_Server4"/>
 		</route>
-		<route src="Cache" dst="JBOD2_host">
-			<link_ctn id="Cache_JBOD2"/>
+
+		<!--ROUTES FROM EACH SERVER TO CACHE-->
+		<route src="Server1" dst="PCIeCard1">
+			<link_ctn id="Server1_PCIeCard1"/>
 		</route>
+
+		<route src="Server2" dst="PCIeCard2">
+			<link_ctn id="Server2_PCIeCard2"/>
+		</route>
+
+		<route src="Server3" dst="PCIeCard3">
+			<link_ctn id="Server3_PCIeCard3"/>
+		</route>
+
+		<route src="Server4" dst="PCIeCard4">
+			<link_ctn id="Server4_PCIeCard4"/>
+		</route>
+
+		<route src="PCIeCard1" dst="FabricManager">
+			<link_ctn id="PCIeCard1_FabricManager"/>
+		</route>
+		<route src="PCIeCard2" dst="FabricManager">
+			<link_ctn id="PCIeCard2_FabricManager"/>
+		</route>
+		<route src="PCIeCard3" dst="FabricManager">
+			<link_ctn id="PCIeCard3_FabricManager"/>
+		</route>
+		<route src="PCIeCard4" dst="FabricManager">
+			<link_ctn id="PCIeCard4_FabricManager"/>
+		</route>
+
+
+		<route src="Server1" dst="FabricManager">
+			<link_ctn id="Server1_PCIeCard1"/>
+			<link_ctn id="PCIeCard1_FabricManager"/>
+		</route>
+		<route src="Server2" dst="FabricManager">
+			<link_ctn id="Server2_PCIeCard2"/>
+			<link_ctn id="PCIeCard2_FabricManager"/>
+		</route>
+		<route src="Server3" dst="FabricManager">
+			<link_ctn id="Server3_PCIeCard3"/>
+			<link_ctn id="PCIeCard3_FabricManager"/>
+		</route>
+		<route src="Server4" dst="FabricManager">
+			<link_ctn id="Server4_PCIeCard4"/>
+			<link_ctn id="PCIeCard4_FabricManager"/>
+		</route>
+
+		<route src="FabricManager" dst="Cache_host">
+			<link_ctn id="FabricManager_Cache_host"/>
+		</route>
+
+		<route src="FabricManager" dst="Adapter">
+			<link_ctn id="FabricManager_Adapter"/>
+		</route>
+
+
+		<route src="Cache_host" dst="LoadBalancer">
+			<link_ctn id="FabricManager_Cache_host"/>
+			<link_ctn id="PCIeCard3_FabricManager"/>
+			<link_ctn id="Server3_PCIeCard3"/>
+			<link_ctn id="LB_Server3"/>
+		</route>
+
+		<route src="FabricManager" dst="LoadBalancer">
+			<link_ctn id="LB_FM"/>
+		</route>
+
 	</zone>
 </platform>
+
+
+<!--
+		<host id="SSD_controller" speed="1Gf">
+			<mount storageId="SSD" name="/SSD"/>
+		</host>
+
+		<host id="JBOD1_controller" speed="1Gf">
+			<mount storageId="JBOD1" name="/JBOD1"/>
+		</host>
+
+		<host id="JBOD2_controller" speed="1Gf">
+			<mount storageId="JBOD2" name="/JBOD2"/>
+		</host>
+-->

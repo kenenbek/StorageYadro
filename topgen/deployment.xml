@@ -2,12 +2,31 @@
 <!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
 <platform version="4.1">
 
-	<actor host="Client" function="client"/>
-	<actor host="Server1" function="server"/>
+	<actor host="LoadBalancer" function="load_balancer"/>
+	<actor host="Server1" function="server_manager">
+		<argument value="Server1"/>
+	</actor>
+
+	<actor host="FabricManager" function="PCIeFabric_manager">
+		<argument value="FabricManager"/>
+	</actor>
+
+	<actor host="Cache_host" function="Cache_manager">
+		<argument value="CacheManager"/>
+	</actor>
 	<!--
-	<actor host="Cache" function="cache"/>
-	<actor host="SSD" function="ssd"/>
-	<actor host="JBOD1" function="jbod"/>
-	<actor host="JBOD2" function="jbod"/>
-	-->
+	<actor host="Server2" function="server_manager">
+		<argument value="Server2"/>
+	</actor>
+	<actor host="Server3" function="server_manager">
+		<argument value="Server3"/>
+	</actor>
+	<actor host="Server4" function="server_manager">
+		<argument value="Server4"/>
+	</actor>
+
+	<actor host="Adapter" function="adapter_manager">
+		<argument value="Adapter"/>
+	</actor>
+-->
 </platform>

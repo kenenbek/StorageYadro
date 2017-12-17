@@ -123,6 +123,60 @@ StorageYadro/fast:
 	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/build
 .PHONY : StorageYadro/fast
 
+src/PCIeFabric.o: src/PCIeFabric.cpp.o
+
+.PHONY : src/PCIeFabric.o
+
+# target to build an object file
+src/PCIeFabric.cpp.o:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/PCIeFabric.cpp.o
+.PHONY : src/PCIeFabric.cpp.o
+
+src/PCIeFabric.i: src/PCIeFabric.cpp.i
+
+.PHONY : src/PCIeFabric.i
+
+# target to preprocess a source file
+src/PCIeFabric.cpp.i:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/PCIeFabric.cpp.i
+.PHONY : src/PCIeFabric.cpp.i
+
+src/PCIeFabric.s: src/PCIeFabric.cpp.s
+
+.PHONY : src/PCIeFabric.s
+
+# target to generate assembly for a file
+src/PCIeFabric.cpp.s:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/PCIeFabric.cpp.s
+.PHONY : src/PCIeFabric.cpp.s
+
+src/adapter.o: src/adapter.cpp.o
+
+.PHONY : src/adapter.o
+
+# target to build an object file
+src/adapter.cpp.o:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/adapter.cpp.o
+.PHONY : src/adapter.cpp.o
+
+src/adapter.i: src/adapter.cpp.i
+
+.PHONY : src/adapter.i
+
+# target to preprocess a source file
+src/adapter.cpp.i:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/adapter.cpp.i
+.PHONY : src/adapter.cpp.i
+
+src/adapter.s: src/adapter.cpp.s
+
+.PHONY : src/adapter.s
+
+# target to generate assembly for a file
+src/adapter.cpp.s:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/adapter.cpp.s
+.PHONY : src/adapter.cpp.s
+
 src/cache.o: src/cache.cpp.o
 
 .PHONY : src/cache.o
@@ -203,6 +257,33 @@ src/dataset_generator.s: src/dataset_generator.cpp.s
 src/dataset_generator.cpp.s:
 	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/dataset_generator.cpp.s
 .PHONY : src/dataset_generator.cpp.s
+
+src/load_balancer.o: src/load_balancer.cpp.o
+
+.PHONY : src/load_balancer.o
+
+# target to build an object file
+src/load_balancer.cpp.o:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/load_balancer.cpp.o
+.PHONY : src/load_balancer.cpp.o
+
+src/load_balancer.i: src/load_balancer.cpp.i
+
+.PHONY : src/load_balancer.i
+
+# target to preprocess a source file
+src/load_balancer.cpp.i:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/load_balancer.cpp.i
+.PHONY : src/load_balancer.cpp.i
+
+src/load_balancer.s: src/load_balancer.cpp.s
+
+.PHONY : src/load_balancer.s
+
+# target to generate assembly for a file
+src/load_balancer.cpp.s:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/load_balancer.cpp.s
+.PHONY : src/load_balancer.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -321,6 +402,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... StorageYadro"
+	@echo "... src/PCIeFabric.o"
+	@echo "... src/PCIeFabric.i"
+	@echo "... src/PCIeFabric.s"
+	@echo "... src/adapter.o"
+	@echo "... src/adapter.i"
+	@echo "... src/adapter.s"
 	@echo "... src/cache.o"
 	@echo "... src/cache.i"
 	@echo "... src/cache.s"
@@ -330,6 +417,9 @@ help:
 	@echo "... src/dataset_generator.o"
 	@echo "... src/dataset_generator.i"
 	@echo "... src/dataset_generator.s"
+	@echo "... src/load_balancer.o"
+	@echo "... src/load_balancer.i"
+	@echo "... src/load_balancer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
