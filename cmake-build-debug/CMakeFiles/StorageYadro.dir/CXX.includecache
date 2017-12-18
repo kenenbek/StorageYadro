@@ -32,10 +32,18 @@ my_functions.h
 storage.h
 /home/kenenbek/CLionProjects/StorageYadro/src/storage.h
 
+/home/kenenbek/CLionProjects/StorageYadro/src/counter.cpp
+simgrid/msg.h
+-
+
 /home/kenenbek/CLionProjects/StorageYadro/src/dataset_generator.cpp
 simgrid/msg.h
 -
 string
+-
+
+/home/kenenbek/CLionProjects/StorageYadro/src/drive.cpp
+simgrid/msg.h
 -
 
 /home/kenenbek/CLionProjects/StorageYadro/src/load_balancer.cpp

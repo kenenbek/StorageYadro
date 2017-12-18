@@ -10,7 +10,6 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(Cache, "messages specific for Cache");
 
 int cache_manager(int argc, char *argv[]) {
     msg_host_t this_host = MSG_host_self();
-
     while (1) {
         msg_task_t task = NULL;
         int res = MSG_task_recv(&task, argv[1]); /* Then it posts asynchronous receives (@ref MSG_task_irecv) and*/
@@ -44,6 +43,9 @@ int cache_executor(int argc, char *argv[]) {
         }
         //Send to ACK TO LB
         MSG_task_send(ack_task, send_to_load_balance_exec.c_str());
+
+        //msg_task_t drive_task = MSG_task_create("task", flops_size, packet_size, NULL);
+        //MSG_task_dsend(drive_task, "drive", NULL);
     }
     MSG_task_destroy(ack_task);
     return 0;

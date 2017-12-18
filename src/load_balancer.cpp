@@ -11,8 +11,8 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(load_balancer, "Messages specific for load_balancer
 int load_balancer(int argc, char *argv[]){
     int VESNIN_SERVER_NUMBER = 1;
     msg_host_t this_host = MSG_host_self();
-    for (int i = 0; i < 5; i++){
-        FileInfo* file = new FileInfo(std::to_string(i), 65e7, (i % VESNIN_SERVER_NUMBER) + 1);
+    for (int i = 0; i < 128; i++){
+        FileInfo* file = new FileInfo(std::to_string(i), 65e6, (i % VESNIN_SERVER_NUMBER) + 1);
         MSG_process_create("", load_balancer_packet_sender, file, this_host);
         MSG_process_sleep(0.1);
     }
@@ -29,6 +29,10 @@ int load_balancer(int argc, char *argv[]){
     return 0;
 }
 
+double get_average(double x){
+    static int sum, n;
+    return (((float)sum)/++n);
+}
 
 int load_balancer_packet_sender(int argc, char *argv[]){
     auto meta = (FileInfo*) MSG_process_get_data(MSG_process_self());
@@ -45,6 +49,7 @@ int load_balancer_packet_sender(int argc, char *argv[]){
 
     msg_task_t packet_task = MSG_task_create("", 0, packet_size, NULL);
     for (int i = 0; i < n_sending; ++i) {
+
         msg_task_t ack_task = NULL;
         MSG_task_send(packet_task, server_address);
 
@@ -53,7 +58,7 @@ int load_balancer_packet_sender(int argc, char *argv[]){
     }
     double t2 = MSG_get_clock();
 
-    XBT_INFO("file %s took %f sec", meta->filename.c_str(), t2 - t1);
+    XBT_INFO("file %s took %f sec, response_time %f sec", meta->filename.c_str(), t2 - t1, (t2-t1)/n_sending);
 
     msg_task_t fin_task = MSG_task_create("finalize", 0, 0, NULL);
     MSG_task_send(fin_task, server_address);

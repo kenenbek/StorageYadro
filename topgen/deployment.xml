@@ -3,6 +3,11 @@
 <platform version="4.1">
 
 	<actor host="LoadBalancer" function="load_balancer"/>
+
+	<actor host="Server1" function="server_manager">
+		<argument value="Server1"/>
+	</actor>
+
 	<actor host="Server1" function="server_manager">
 		<argument value="Server1"/>
 	</actor>
@@ -14,6 +19,25 @@
 	<actor host="Cache_host" function="Cache_manager">
 		<argument value="CacheManager"/>
 	</actor>
+
+
+
+	<actor host="LoadBalancer" function="traffic_counter_sender">
+		<argument value="LB_Server1_tr"/>
+		<argument value="Server1_LB_tr"/>
+		<argument value="1e9"/>
+	</actor>
+
+	<actor host="Server1" function="traffic_counter_receiver">
+		<argument value="Server1_LB_tr"/>
+		<argument value="LB_Server1_tr"/>
+	</actor>
+
+
+	<!--
+	<actor host="Adapter" function="drive">
+		<argument value="drive"/>
+	</actor> -->
 	<!--
 	<actor host="Server2" function="server_manager">
 		<argument value="Server2"/>

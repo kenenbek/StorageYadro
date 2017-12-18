@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/StorageYadro.dir/src/load_balancer.cpp.o"
   "CMakeFiles/StorageYadro.dir/src/adapter.cpp.o"
   "CMakeFiles/StorageYadro.dir/src/cache.cpp.o"
+  "CMakeFiles/StorageYadro.dir/src/drive.cpp.o"
+  "CMakeFiles/StorageYadro.dir/src/counter.cpp.o"
   "StorageYadro.pdb"
   "StorageYadro"
 )

@@ -297,6 +297,54 @@ CMakeFiles/StorageYadro.dir/src/cache.cpp.o.provides: CMakeFiles/StorageYadro.di
 CMakeFiles/StorageYadro.dir/src/cache.cpp.o.provides.build: CMakeFiles/StorageYadro.dir/src/cache.cpp.o
 
 
+CMakeFiles/StorageYadro.dir/src/drive.cpp.o: CMakeFiles/StorageYadro.dir/flags.make
+CMakeFiles/StorageYadro.dir/src/drive.cpp.o: ../src/drive.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/StorageYadro.dir/src/drive.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StorageYadro.dir/src/drive.cpp.o -c /home/kenenbek/CLionProjects/StorageYadro/src/drive.cpp
+
+CMakeFiles/StorageYadro.dir/src/drive.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/StorageYadro.dir/src/drive.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kenenbek/CLionProjects/StorageYadro/src/drive.cpp > CMakeFiles/StorageYadro.dir/src/drive.cpp.i
+
+CMakeFiles/StorageYadro.dir/src/drive.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/StorageYadro.dir/src/drive.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kenenbek/CLionProjects/StorageYadro/src/drive.cpp -o CMakeFiles/StorageYadro.dir/src/drive.cpp.s
+
+CMakeFiles/StorageYadro.dir/src/drive.cpp.o.requires:
+
+.PHONY : CMakeFiles/StorageYadro.dir/src/drive.cpp.o.requires
+
+CMakeFiles/StorageYadro.dir/src/drive.cpp.o.provides: CMakeFiles/StorageYadro.dir/src/drive.cpp.o.requires
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/drive.cpp.o.provides.build
+.PHONY : CMakeFiles/StorageYadro.dir/src/drive.cpp.o.provides
+
+CMakeFiles/StorageYadro.dir/src/drive.cpp.o.provides.build: CMakeFiles/StorageYadro.dir/src/drive.cpp.o
+
+
+CMakeFiles/StorageYadro.dir/src/counter.cpp.o: CMakeFiles/StorageYadro.dir/flags.make
+CMakeFiles/StorageYadro.dir/src/counter.cpp.o: ../src/counter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/StorageYadro.dir/src/counter.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StorageYadro.dir/src/counter.cpp.o -c /home/kenenbek/CLionProjects/StorageYadro/src/counter.cpp
+
+CMakeFiles/StorageYadro.dir/src/counter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/StorageYadro.dir/src/counter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kenenbek/CLionProjects/StorageYadro/src/counter.cpp > CMakeFiles/StorageYadro.dir/src/counter.cpp.i
+
+CMakeFiles/StorageYadro.dir/src/counter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/StorageYadro.dir/src/counter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kenenbek/CLionProjects/StorageYadro/src/counter.cpp -o CMakeFiles/StorageYadro.dir/src/counter.cpp.s
+
+CMakeFiles/StorageYadro.dir/src/counter.cpp.o.requires:
+
+.PHONY : CMakeFiles/StorageYadro.dir/src/counter.cpp.o.requires
+
+CMakeFiles/StorageYadro.dir/src/counter.cpp.o.provides: CMakeFiles/StorageYadro.dir/src/counter.cpp.o.requires
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/counter.cpp.o.provides.build
+.PHONY : CMakeFiles/StorageYadro.dir/src/counter.cpp.o.provides
+
+CMakeFiles/StorageYadro.dir/src/counter.cpp.o.provides.build: CMakeFiles/StorageYadro.dir/src/counter.cpp.o
+
+
 # Object files for target StorageYadro
 StorageYadro_OBJECTS = \
 "CMakeFiles/StorageYadro.dir/src/main.cpp.o" \
@@ -308,7 +356,9 @@ StorageYadro_OBJECTS = \
 "CMakeFiles/StorageYadro.dir/src/PCIeFabric.cpp.o" \
 "CMakeFiles/StorageYadro.dir/src/load_balancer.cpp.o" \
 "CMakeFiles/StorageYadro.dir/src/adapter.cpp.o" \
-"CMakeFiles/StorageYadro.dir/src/cache.cpp.o"
+"CMakeFiles/StorageYadro.dir/src/cache.cpp.o" \
+"CMakeFiles/StorageYadro.dir/src/drive.cpp.o" \
+"CMakeFiles/StorageYadro.dir/src/counter.cpp.o"
 
 # External object files for target StorageYadro
 StorageYadro_EXTERNAL_OBJECTS =
@@ -323,10 +373,12 @@ StorageYadro: CMakeFiles/StorageYadro.dir/src/PCIeFabric.cpp.o
 StorageYadro: CMakeFiles/StorageYadro.dir/src/load_balancer.cpp.o
 StorageYadro: CMakeFiles/StorageYadro.dir/src/adapter.cpp.o
 StorageYadro: CMakeFiles/StorageYadro.dir/src/cache.cpp.o
+StorageYadro: CMakeFiles/StorageYadro.dir/src/drive.cpp.o
+StorageYadro: CMakeFiles/StorageYadro.dir/src/counter.cpp.o
 StorageYadro: CMakeFiles/StorageYadro.dir/build.make
 StorageYadro: ~/SimGrid/lib/libsimgrid.so
 StorageYadro: CMakeFiles/StorageYadro.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable StorageYadro"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable StorageYadro"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/StorageYadro.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -344,6 +396,8 @@ CMakeFiles/StorageYadro.dir/requires: CMakeFiles/StorageYadro.dir/src/PCIeFabric
 CMakeFiles/StorageYadro.dir/requires: CMakeFiles/StorageYadro.dir/src/load_balancer.cpp.o.requires
 CMakeFiles/StorageYadro.dir/requires: CMakeFiles/StorageYadro.dir/src/adapter.cpp.o.requires
 CMakeFiles/StorageYadro.dir/requires: CMakeFiles/StorageYadro.dir/src/cache.cpp.o.requires
+CMakeFiles/StorageYadro.dir/requires: CMakeFiles/StorageYadro.dir/src/drive.cpp.o.requires
+CMakeFiles/StorageYadro.dir/requires: CMakeFiles/StorageYadro.dir/src/counter.cpp.o.requires
 
 .PHONY : CMakeFiles/StorageYadro.dir/requires
 

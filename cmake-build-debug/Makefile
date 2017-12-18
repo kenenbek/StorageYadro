@@ -231,6 +231,33 @@ src/client.cpp.s:
 	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/client.cpp.s
 .PHONY : src/client.cpp.s
 
+src/counter.o: src/counter.cpp.o
+
+.PHONY : src/counter.o
+
+# target to build an object file
+src/counter.cpp.o:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/counter.cpp.o
+.PHONY : src/counter.cpp.o
+
+src/counter.i: src/counter.cpp.i
+
+.PHONY : src/counter.i
+
+# target to preprocess a source file
+src/counter.cpp.i:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/counter.cpp.i
+.PHONY : src/counter.cpp.i
+
+src/counter.s: src/counter.cpp.s
+
+.PHONY : src/counter.s
+
+# target to generate assembly for a file
+src/counter.cpp.s:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/counter.cpp.s
+.PHONY : src/counter.cpp.s
+
 src/dataset_generator.o: src/dataset_generator.cpp.o
 
 .PHONY : src/dataset_generator.o
@@ -257,6 +284,33 @@ src/dataset_generator.s: src/dataset_generator.cpp.s
 src/dataset_generator.cpp.s:
 	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/dataset_generator.cpp.s
 .PHONY : src/dataset_generator.cpp.s
+
+src/drive.o: src/drive.cpp.o
+
+.PHONY : src/drive.o
+
+# target to build an object file
+src/drive.cpp.o:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/drive.cpp.o
+.PHONY : src/drive.cpp.o
+
+src/drive.i: src/drive.cpp.i
+
+.PHONY : src/drive.i
+
+# target to preprocess a source file
+src/drive.cpp.i:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/drive.cpp.i
+.PHONY : src/drive.cpp.i
+
+src/drive.s: src/drive.cpp.s
+
+.PHONY : src/drive.s
+
+# target to generate assembly for a file
+src/drive.cpp.s:
+	$(MAKE) -f CMakeFiles/StorageYadro.dir/build.make CMakeFiles/StorageYadro.dir/src/drive.cpp.s
+.PHONY : src/drive.cpp.s
 
 src/load_balancer.o: src/load_balancer.cpp.o
 
@@ -414,9 +468,15 @@ help:
 	@echo "... src/client.o"
 	@echo "... src/client.i"
 	@echo "... src/client.s"
+	@echo "... src/counter.o"
+	@echo "... src/counter.i"
+	@echo "... src/counter.s"
 	@echo "... src/dataset_generator.o"
 	@echo "... src/dataset_generator.i"
 	@echo "... src/dataset_generator.s"
+	@echo "... src/drive.o"
+	@echo "... src/drive.i"
+	@echo "... src/drive.s"
 	@echo "... src/load_balancer.o"
 	@echo "... src/load_balancer.i"
 	@echo "... src/load_balancer.s"

@@ -30,5 +30,11 @@ int cache_executor(int argc, char *argv[]);
 int adapter_manager(int argc, char *argv[]);
 int load_balancer_packet_sender(int argc, char *argv[]);
 int adapter_manager(int argc, char *argv[]);
+int drive(int argc, char *argv[]);
+
+
+//traffic
+int traffic_counter_receiver(int argc, char* argv[]);
+int traffic_counter_sender(int argc, char* argv[]);
 #endif //STORAGEYADRO_MYFUNCTIONS_H
 

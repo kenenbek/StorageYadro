@@ -98,7 +98,13 @@
 		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/client.cpp">
 			<Option target="StorageYadro"/>
 		</Unit>
+		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/counter.cpp">
+			<Option target="StorageYadro"/>
+		</Unit>
 		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/dataset_generator.cpp">
+			<Option target="StorageYadro"/>
+		</Unit>
+		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/drive.cpp">
 			<Option target="StorageYadro"/>
 		</Unit>
 		<Unit filename="/home/kenenbek/CLionProjects/StorageYadro/src/load_balancer.cpp">

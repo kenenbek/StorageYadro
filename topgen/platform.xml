@@ -38,8 +38,8 @@
 		<host id="PCIeCard1" speed="1Gf"/>
 		<host id="PCIeCard2" speed="1Gf"/>
 		<host id="PCIeCard3" speed="1Gf"/>
-		<host id="PCIeCard4" speed="1Gf">
-		</host>
+		<host id="PCIeCard4" speed="1Gf"/>
+
 
 		<host id="FabricManager" speed="1Gf">
 			<mount storageId="Cache" name="/Cache"/>
@@ -54,26 +54,27 @@
 		<host id="Cache_host" speed="1Gf"/>
 
 		<!--LINKS-->
-		<link id="LB_Server1" bandwidth="10GBps" latency="0us"/>
-		<link id="LB_Server2" bandwidth="10GBps" latency="0us"/>
-		<link id="LB_Server3" bandwidth="10GBps" latency="0us"/>
-		<link id="LB_Server4" bandwidth="10GBps" latency="0us"/>
+		<link id="LB_Server1" bandwidth="1GBps" latency="0us"/>
+		<link id="LB_Server2" bandwidth="1GBps" latency="0us"/>
+		<link id="LB_Server3" bandwidth="1GBps" latency="0us"/>
+		<link id="LB_Server4" bandwidth="1GBps" latency="0us"/>
 
-		<link id="Server1_PCIeCard1" bandwidth="10GBps" latency="0us"/>
-		<link id="Server2_PCIeCard2" bandwidth="10GBps" latency="0us"/>
-		<link id="Server3_PCIeCard3" bandwidth="10GBps" latency="0us"/>
-		<link id="Server4_PCIeCard4" bandwidth="10GBps" latency="0us"/>
+		<link id="Server1_PCIeCard1" bandwidth="1GBps" latency="0us"/>
+		<link id="Server2_PCIeCard2" bandwidth="1GBps" latency="0us"/>
+		<link id="Server3_PCIeCard3" bandwidth="1GBps" latency="0us"/>
+		<link id="Server4_PCIeCard4" bandwidth="1GBps" latency="0us"/>
 
-		<link id="PCIeCard1_FabricManager" bandwidth="64GBps" latency="0us"/>
-		<link id="PCIeCard2_FabricManager" bandwidth="64GBps" latency="0us"/>
-		<link id="PCIeCard3_FabricManager" bandwidth="64GBps" latency="0us"/>
-		<link id="PCIeCard4_FabricManager" bandwidth="64GBps" latency="0us"/>
+		<link id="PCIeCard1_FabricManager" bandwidth="6.4GBps" latency="0us"/>
+		<link id="PCIeCard2_FabricManager" bandwidth="6.4GBps" latency="0us"/>
+		<link id="PCIeCard3_FabricManager" bandwidth="6.4GBps" latency="0us"/>
+		<link id="PCIeCard4_FabricManager" bandwidth="6.4GBps" latency="0us"/>
 
-		<link id="FabricManager_Adapter" bandwidth="64GBps" latency="0us"/>
+		<link id="FabricManager_Adapter" bandwidth="6.4GBps" latency="0us"/>
 
-		<link id="FabricManager_Cache_host" bandwidth="64GBps" latency="0us"/>
-		<link id="LB_FM" bandwidth="64GBps"  latency="0us"/>
-		<link id="LB_CM" bandwidth="64GBps" latency="0us"/>
+		<link id="FabricManager_Cache_host" bandwidth="6.4GBps" latency="0us"/>
+		<link id="Cache_host_adapter" bandwidth="0.64GBps" latency="0us"/>
+		<link id="LB_FM" bandwidth="6.4GBps"  latency="0us"/>
+		<link id="LB_CM" bandwidth="6.4GBps" latency="0us"/>
 
 		<!--ROUTES FROM LOAD BALANCER TO EACH SERVER-->
 		<route src="LoadBalancer" dst="Server1">
@@ -155,6 +156,9 @@
 
 		<route src="FabricManager" dst="LoadBalancer">
 			<link_ctn id="LB_FM"/>
+		</route>
+		<route src="Cache_host" dst="Adapter">
+			<link_ctn id="Cache_host_adapter"/>
 		</route>
 
 	</zone>
