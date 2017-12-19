@@ -36,7 +36,7 @@ int drive_size_counter(int argc, char *argv[]){
     auto size = (std::atomic<double>*) MSG_process_get_data(MSG_process_self());
     while (1){
         XBT_INFO("Size of drive is %.2f GB", (double) *size / 10e9);
-        MSG_process_sleep(0.1);
+        MSG_process_sleep(1);
     }
     return 0;
 }

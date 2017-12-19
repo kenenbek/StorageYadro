@@ -11,14 +11,14 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(load_balancer, "Messages specific for load_balancer
 int load_balancer(int argc, char *argv[]){
     int VESNIN_SERVER_NUMBER = 1;
     msg_host_t this_host = MSG_host_self();
-    for (int i = 0; i < 128; i++){
+    for (int i = 0; i < 4; i++){
         FileInfo* file = new FileInfo(std::to_string(i), 65e6, (i % VESNIN_SERVER_NUMBER) + 1);
         MSG_process_create("", load_balancer_packet_sender, file, this_host);
         MSG_process_sleep(0.1);
     }
 
     //FINALIZE all SERVERs
-    for(int i = 1; i < VESNIN_SERVER_NUMBER + 1; i++){
+    for(int i = 1; i < VESNIN_SERVER_NUMBER + 4; i++){
         msg_task_t fin_task = MSG_task_create("finalize", 0, 0, NULL);
         MSG_task_send(fin_task, ("Server" + std::to_string(i)).c_str());
     }

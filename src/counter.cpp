@@ -12,15 +12,17 @@ int traffic_counter_sender(int argc, char* argv[]){
     double flops_size = 0;
     msg_task_t task = MSG_task_create("", flops_size, packet_size, NULL);
     char* mymailbox = argv[1];
-    char *mailbox = argv[2];
     double bandwidth =  atof(argv[3]);
     while(1){
-        double t1 = MSG_get_clock();
-        msg_task_t ack_task = NULL;
-        MSG_task_send(task, mailbox);
-        MSG_task_receive(&ack_task, mymailbox);
-        double t2 = MSG_get_clock();
-        XBT_INFO("Current traffic through is %f MB/s", 0.5 * ((t2-t1) * bandwidth - packet_size) / 1e6);
+        for (int i = 2; i < argc - 1; ++i) {
+            char *mailbox = argv[i];
+            double t1 = MSG_get_clock();
+            msg_task_t ack_task = NULL;
+            MSG_task_send(task, mailbox);
+            MSG_task_receive(&ack_task, mymailbox);
+            double t2 = MSG_get_clock();
+            XBT_INFO("Current traffic through %s is %f MB/s", mailbox, 0.5 * ((t2-t1) * bandwidth - packet_size) / 1e6);
+        }
         MSG_process_sleep(1);
     }
     MSG_task_destroy(task);
