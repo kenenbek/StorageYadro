@@ -12,7 +12,7 @@ int traffic_counter_sender(int argc, char* argv[]){
     double flops_size = 0;
     msg_task_t task = MSG_task_create("", flops_size, packet_size, NULL);
     char* mymailbox = argv[1];
-    double bandwidth =  atof(argv[3]);
+    double bandwidth =  atof(argv[argc-1]);
     while(1){
         for (int i = 2; i < argc - 1; ++i) {
             char *mailbox = argv[i];

@@ -59,6 +59,35 @@
 		<argument value="LB_Server1_tr"/>
 	</actor>
 
+	<actor host="FabricManager" function="traffic_counter_sender">
+		<argument value="PCIeFabricSender"/>
+		<argument value="Server1_FM_tr"/>
+		<argument value="Server2_FM_tr"/>
+		<argument value="Server3_FM_tr"/>
+		<argument value="Server4_FM_tr"/>
+		<argument value="1e9"/>
+	</actor>
+
+	<actor host="Server1" function="traffic_counter_receiver">
+		<argument value="FM_Server1_tr"/>
+		<argument value="PCIeFabricSender"/>
+	</actor>
+
+	<actor host="Server2" function="traffic_counter_receiver">
+		<argument value="FM_Server2_tr"/>
+		<argument value="PCIeFabricSender"/>
+	</actor>
+
+	<actor host="Server3" function="traffic_counter_receiver">
+		<argument value="FM_Server3_tr"/>
+		<argument value="PCIeFabricSender"/>
+	</actor>
+
+	<actor host="Server4" function="traffic_counter_receiver">
+		<argument value="FM_Server4_tr"/>
+		<argument value="PCIeFabricSender"/>
+	</actor>
+
 	<actor host="Server1" function="cpu_counter">
 		<argument value="256"/>
 	</actor>
