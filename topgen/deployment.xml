@@ -29,14 +29,12 @@
 	</actor>
 
 	<actor host="Server1" function="cpu_counter">
-
+		<argument value="256"/>
 	</actor>
 
-
-	<!--
 	<actor host="Adapter" function="drive">
 		<argument value="drive"/>
-	</actor> -->
+	</actor>
 	<!--
 	<actor host="Server2" function="server_manager">
 		<argument value="Server2"/>

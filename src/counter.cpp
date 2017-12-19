@@ -48,10 +48,12 @@ int traffic_counter_receiver(int argc, char* argv[]){
 int cpu_counter(int argc, char*argv[]){
     MSG_process_daemonize(MSG_process_self());
     msg_host_t host = MSG_host_self();
+    const char* name = MSG_host_get_name(host);
+    float full_load = atof(argv[1]);
     while (1){
         xbt_dynar_t d = xbt_dynar_new(sizeof(msg_process_t), NULL);
         MSG_host_get_process_list(host, d);
-        XBT_INFO("%lu", xbt_dynar_length(d));
+        XBT_INFO("Load of %s is %.2f", name, xbt_dynar_length(d)/full_load);
         xbt_dynar_free(&d);
         MSG_process_sleep(1);
     }
