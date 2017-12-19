@@ -5,6 +5,7 @@
 #include <simgrid/msg.h>
 XBT_LOG_NEW_DEFAULT_CATEGORY(drive, "messages specific for drive");
 int drive(int argc, char *argv[]){
+    return 0;
     char *mailbox = argv[1];
     double size = 0;
     msg_task_t task = NULL;

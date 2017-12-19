@@ -33,8 +33,9 @@ int adapter_manager(int argc, char *argv[]);
 int drive(int argc, char *argv[]);
 
 
-//traffic
+//traffic counter
 int traffic_counter_receiver(int argc, char* argv[]);
 int traffic_counter_sender(int argc, char* argv[]);
+int cpu_counter(int argc, char*argv[]);
 #endif //STORAGEYADRO_MYFUNCTIONS_H
 

@@ -28,6 +28,7 @@ int main(int argc, char **argv)
     MSG_function_register("drive", drive);
     MSG_function_register("traffic_counter_sender", traffic_counter_sender);
     MSG_function_register("traffic_counter_receiver", traffic_counter_receiver);
+    MSG_function_register("cpu_counter", cpu_counter);
 
     MSG_launch_application(argv[2]);
 

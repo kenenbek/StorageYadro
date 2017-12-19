@@ -8,10 +8,6 @@
 		<argument value="Server1"/>
 	</actor>
 
-	<actor host="Server1" function="server_manager">
-		<argument value="Server1"/>
-	</actor>
-
 	<actor host="FabricManager" function="PCIeFabric_manager">
 		<argument value="FabricManager"/>
 	</actor>
@@ -19,7 +15,6 @@
 	<actor host="Cache_host" function="Cache_manager">
 		<argument value="CacheManager"/>
 	</actor>
-
 
 
 	<actor host="LoadBalancer" function="traffic_counter_sender">
@@ -31,6 +26,10 @@
 	<actor host="Server1" function="traffic_counter_receiver">
 		<argument value="Server1_LB_tr"/>
 		<argument value="LB_Server1_tr"/>
+	</actor>
+
+	<actor host="Server1" function="cpu_counter">
+
 	</actor>
 
 
