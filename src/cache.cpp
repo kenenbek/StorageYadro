@@ -44,8 +44,8 @@ int cache_executor(int argc, char *argv[]) {
         //Send to ACK TO LB
         MSG_task_send(ack_task, send_to_load_balance_exec.c_str());
 
-        //msg_task_t drive_task = MSG_task_create("task", flops_size, packet_size, NULL);
-        //MSG_task_dsend(drive_task, "drive", NULL);
+        msg_task_t drive_task = MSG_task_create("task", flops_size, packet_size, NULL);
+        MSG_task_dsend(drive_task, "drive", NULL);
     }
     MSG_task_destroy(ack_task);
     return 0;
