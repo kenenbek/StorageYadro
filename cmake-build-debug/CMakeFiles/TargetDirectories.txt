@@ -1,3 +1,0 @@
-/home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/kenenbek/CLionProjects/StorageYadro/cmake-build-debug/CMakeFiles/StorageYadro.dir
