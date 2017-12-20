@@ -27,7 +27,11 @@
 	</actor>
 
 	<actor host="Adapter" function="disk">
-		<argument value="drive"/>
+		<argument value="JBOD1"/>
+	</actor>
+
+	<actor host="JBOD2" function="disk">
+		<argument value="JBOD2"/>
 	</actor>
 
 	<actor host="SSD" function="disk">
@@ -93,12 +97,26 @@
 	</actor>
 
 	<actor host="Cache_host" function="traffic_counter_sender">
-		<argument value="LB_Server1_tr"/>
-		<argument value="Server1_LB_tr"/>
-		<argument value="Server2_LB_tr"/>
-		<argument value="Server3_LB_tr"/>
-		<argument value="Server4_LB_tr"/>
+		<argument value="Cache_traffic"/>
+		<argument value="SSD_traffic"/>
+		<argument value="JBOD1_traffic"/>
+		<argument value="JBOD2_traffic"/>
 		<argument value="1e9"/>
+	</actor>
+
+	<actor host="Adapter" function="traffic_counter_receiver">
+		<argument value="JBOD1_traffic"/>
+		<argument value="Cache_traffic"/>
+	</actor>
+
+	<actor host="JBOD2" function="traffic_counter_receiver">
+		<argument value="JBOD2_traffic"/>
+		<argument value="Cache_traffic"/>
+	</actor>
+
+	<actor host="SSD" function="traffic_counter_receiver">
+		<argument value="SSD_traffic"/>
+		<argument value="Cache_traffic"/>
 	</actor>
 
 	<actor host="Server1" function="cpu_counter">

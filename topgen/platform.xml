@@ -48,6 +48,9 @@
 		<host id="SSD" speed="1Gf">
 		</host>
 
+		<host id="JBOD2" speed="1Gf">
+		</host>
+
 		<host id="Adapter" speed="1Gf">
 			<mount storageId="SSD" name="/SSD"/>
 			<mount storageId="JBOD1" name="/JBOD1"/>
@@ -167,6 +170,10 @@
 
 		<route src="Cache_host" dst="SSD">
 			<link_ctn id="Cache_host_SSD"/>
+		</route>
+
+		<route src="Cache_host" dst="JBOD2">
+			<link_ctn id="Cache_host_adapter"/>
 		</route>
 
 	</zone>

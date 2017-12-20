@@ -30,6 +30,7 @@ int cache_manager(int argc, char *argv[]) {
 
 
 int cache_executor(int argc, char *argv[]) {
+    char* address[] = {"JBOD1", "JBOD2", "SSD"};
     auto flops_size = 0;
     auto packet_size = (int) 64e3;
     auto meta = (FileInfo*) MSG_process_get_data(MSG_process_self());
@@ -50,7 +51,8 @@ int cache_executor(int argc, char *argv[]) {
         MSG_task_send(ack_task, send_to_load_balance_exec.c_str());
 
         msg_task_t drive_task = MSG_task_create("task", flops_size, packet_size, NULL);
-        MSG_task_dsend(drive_task, "drive", NULL);
+        int randNum = rand()%3;
+        MSG_task_dsend(drive_task, address[randNum], NULL);
     }
     MSG_task_destroy(ack_task);
     return 0;

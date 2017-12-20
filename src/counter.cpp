@@ -22,7 +22,7 @@ int traffic_counter_sender(int argc, char* argv[]){
             MSG_task_send(task, mailbox);
             MSG_task_receive(&ack_task, mymailbox);
             double t2 = MSG_get_clock();
-            XBT_INFO("Current traffic through %s is %f MB/s", mailbox, 0.5 * ((t2-t1) * bandwidth - packet_size) / 1e6);
+            XBT_INFO("Current traffic through %s is %f MB/s", mailbox, 0.5 * ((t2-t1) * bandwidth ) / 1e6);
         }
         MSG_process_sleep(1);
     }
