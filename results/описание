@@ -1,0 +1,2 @@
+Описание
+Time	Server1 (%)	Server2 (%)	Server3 (%)	Server4 (%)	Server1_LB (MB/s)	Server2_LB (MB/s)	Server3_LB (MB/s)	Server4_LB (MB/s)	PCIeChannel1 (MB/s)	PCIeChannel2 (MB/s)	PCIeChannel3 (MB/s)	PCIeChannel4 (MB/s)	JBOD1 rate (MB/s)	JBOD2 rate (MB/s)	SSD rate (MB/s)	JBOD1 (MB)	JBOD2 (MB)	SSD (MB)	Cache (MB)
