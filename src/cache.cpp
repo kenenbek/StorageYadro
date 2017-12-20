@@ -3,12 +3,16 @@
 //
 
 #include <simgrid/msg.h>
+#include <atomic>
 #include "my_functions.h"
 #include "structures.h"
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(Cache, "messages specific for Cache");
 
+std::atomic<uint64_t> global_cache_size;
+
 int cache_manager(int argc, char *argv[]) {
+    global_cache_size = 0;
     msg_host_t this_host = MSG_host_self();
     while (1) {
         msg_task_t task = NULL;
@@ -27,7 +31,7 @@ int cache_manager(int argc, char *argv[]) {
 
 int cache_executor(int argc, char *argv[]) {
     auto flops_size = 0;
-    auto packet_size = 64e3;
+    auto packet_size = (int) 64e3;
     auto meta = (FileInfo*) MSG_process_get_data(MSG_process_self());
 
     std::string receive_from_fabric_manager(meta->Cache_executor_from_FM.c_str());
@@ -41,6 +45,7 @@ int cache_executor(int argc, char *argv[]) {
             MSG_task_destroy(packet_data);
             break;
         }
+        global_cache_size += packet_size;
         //Send to ACK TO LB
         MSG_task_send(ack_task, send_to_load_balance_exec.c_str());
 

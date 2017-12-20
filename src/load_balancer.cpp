@@ -11,7 +11,7 @@ XBT_LOG_NEW_DEFAULT_CATEGORY(load_balancer, "Messages specific for load_balancer
 int load_balancer(int argc, char *argv[]){
     int VESNIN_SERVER_NUMBER = 1;
     msg_host_t this_host = MSG_host_self();
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 1000; i++){
         FileInfo* file = new FileInfo(std::to_string(i), 65e6, (i % VESNIN_SERVER_NUMBER) + 1);
         MSG_process_create("", load_balancer_packet_sender, file, this_host);
         MSG_process_sleep(0.1);
@@ -29,10 +29,6 @@ int load_balancer(int argc, char *argv[]){
     return 0;
 }
 
-double get_average(double x){
-    static int sum, n;
-    return (((float)sum)/++n);
-}
 
 int load_balancer_packet_sender(int argc, char *argv[]){
     auto meta = (FileInfo*) MSG_process_get_data(MSG_process_self());

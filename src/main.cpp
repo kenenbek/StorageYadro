@@ -25,7 +25,7 @@ int main(int argc, char **argv)
     MSG_function_register("PCIeFabric_manager", PCIeFabric_manager);
     MSG_function_register("Cache_manager", cache_manager);
     MSG_function_register("adapter_manager", adapter_manager);
-    MSG_function_register("drive", drive);
+    MSG_function_register("disk", disk);
     MSG_function_register("traffic_counter_sender", traffic_counter_sender);
     MSG_function_register("traffic_counter_receiver", traffic_counter_receiver);
     MSG_function_register("cpu_counter", cpu_counter);

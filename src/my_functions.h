@@ -7,6 +7,9 @@
 
 #include <string>
 #include <map>
+#include <atomic>
+
+extern std::atomic<uint64_t> global_cache_size;
 
 int dataset_generator(int argc, char *argv[]);
 int server(int argc, char *argv[]);
@@ -30,13 +33,13 @@ int cache_executor(int argc, char *argv[]);
 int adapter_manager(int argc, char *argv[]);
 int load_balancer_packet_sender(int argc, char *argv[]);
 int adapter_manager(int argc, char *argv[]);
-int drive(int argc, char *argv[]);
+int disk(int argc, char *argv[]);
 
 
 //traffic counter
 int traffic_counter_receiver(int argc, char* argv[]);
 int traffic_counter_sender(int argc, char* argv[]);
 int cpu_counter(int argc, char*argv[]);
-int drive_size_counter(int argc, char *argv[]);
+int disk_size_counter(int argc, char *argv[]);
 #endif //STORAGEYADRO_MYFUNCTIONS_H
 
