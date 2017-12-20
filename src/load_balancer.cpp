@@ -18,7 +18,7 @@ int load_balancer(int argc, char *argv[]){
     }
 
     //FINALIZE all SERVERs
-    for(int i = 1; i < VESNIN_SERVER_NUMBER + 4; i++){
+    for(int i = 1; i < VESNIN_SERVER_NUMBER + 1; i++){
         msg_task_t fin_task = MSG_task_create("finalize", 0, 0, NULL);
         MSG_task_send(fin_task, ("Server" + std::to_string(i)).c_str());
     }

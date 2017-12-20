@@ -7,7 +7,6 @@
 XBT_LOG_NEW_DEFAULT_CATEGORY(logger, "Messages specific for logger");
 
 int traffic_counter_sender(int argc, char* argv[]){
-    XBT_INFO("%s", argv[1]);
     MSG_process_daemonize(MSG_process_self());
     double packet_size = 64e3;
     double flops_size = 0;

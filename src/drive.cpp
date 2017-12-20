@@ -29,8 +29,8 @@ int disk(int argc, char *argv[]){
 
 
 int disk_size_counter(int argc, char *argv[]){
-    double mega = 1000000;
     MSG_process_daemonize(MSG_process_self());
+    double mega = 1000000;
     const char* host_name = MSG_host_get_name(MSG_host_self());
     msg_process_t process = MSG_process_self();
     auto size = (std::atomic_uint_fast64_t*) MSG_process_get_data(process);

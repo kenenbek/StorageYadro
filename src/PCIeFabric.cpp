@@ -14,7 +14,6 @@ int PCIeFabric_manager(int argc, char *argv[]) {
     while (1) {
         msg_task_t task = NULL;
         int res = MSG_task_recv(&task, argv[1]); /* Then it posts asynchronous receives (@ref MSG_task_irecv) and*/
-
         if (strcmp(MSG_task_get_name(task), "finalize") == 0) { /* If the received task is "finalize", the process ends */
             MSG_task_destroy(task);
             break;
