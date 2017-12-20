@@ -8,17 +8,23 @@
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(load_balancer, "Messages specific for load_balancer");
 
+double fRand(double fMin, double fMax)
+{
+    double f = (double)rand() / RAND_MAX;
+    return fMin + f * (fMax - fMin);
+}
+
 int load_balancer(int argc, char *argv[]){
     int VESNIN_SERVER_NUMBER = 4;
     msg_host_t this_host = MSG_host_self();
-    for (int i = 0; i < 1; i++){
-        FileInfo* file = new FileInfo(std::to_string(i), 65e6, (i % VESNIN_SERVER_NUMBER) + 1);
+    for (int i = 0; i < 1000; i++){
+        FileInfo* file = new FileInfo(std::to_string(i), fRand(65e6, 100e6), (i % VESNIN_SERVER_NUMBER) + 1);
         MSG_process_create("", load_balancer_packet_sender, file, this_host);
         MSG_process_sleep(0.1);
     }
 
     //FINALIZE all SERVERs
-    for(int i = 1; i < VESNIN_SERVER_NUMBER + 1; i++){
+    for(int i = 1; i < 5; i++){
         msg_task_t fin_task = MSG_task_create("finalize", 0, 0, NULL);
         MSG_task_send(fin_task, ("Server" + std::to_string(i)).c_str());
     }
@@ -54,7 +60,7 @@ int load_balancer_packet_sender(int argc, char *argv[]){
     }
     double t2 = MSG_get_clock();
 
-    XBT_INFO("file %s took %f sec, response_time %f sec, %s, %.2f MB", meta->filename.c_str(), t2 - t1, (t2-t1)/n_sending, meta->server_name.c_str(), meta->size / 1e6);
+    XBT_INFO("%s, %f, %f, %s, %.2f", meta->filename.c_str(), t2 - t1, (t2-t1)/n_sending, meta->server_name.c_str(), meta->size / 1e6);
 
     msg_task_t fin_task = MSG_task_create("finalize", 0, 0, NULL);
     MSG_task_send(fin_task, server_address);

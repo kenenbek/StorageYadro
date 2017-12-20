@@ -38,7 +38,7 @@ int disk_size_counter(int argc, char *argv[]){
 
     while (1){
         XBT_INFO("Size of %s is %.2f MB" " Size of cache is %.2fMB", name, size->load() / mega, global_cache_size.load() / mega);
-        MSG_process_sleep(1);
+        MSG_process_sleep(0.1);
     }
     return 0;
 }
